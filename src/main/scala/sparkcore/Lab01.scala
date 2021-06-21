@@ -40,6 +40,11 @@ object Lab01 {
     print(s"Total:$total")
     
     
+    val cnt = rdd.count()
+    
+    print(s"Count:$cnt")
+    
+    
     
     
     
