@@ -46,8 +46,9 @@ object Lab01 {
     
     
     print("process completed")
-    
+
     print("Updated code - srini")
+    print("updated code - Kumar")
     
     
     
