@@ -49,7 +49,7 @@ object Lab01 {
     
     print("updated code - Kumar")
     
-     print("updated code - venkat")
+     print("updated code - karthik")
     
     
   }
