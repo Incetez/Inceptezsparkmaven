@@ -45,7 +45,7 @@ object Lab01 {
     print(s"Count:$cnt")
     
     
-    
+    print("process completed")
     
     
     
