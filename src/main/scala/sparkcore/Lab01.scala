@@ -51,8 +51,9 @@ object Lab01 {
     print("updated code - Kumar")
     print("updated code - rajesh")
     
-     
      print("updated code - kannan")
+     print("updated code - karthik")
+
     
     
   }
