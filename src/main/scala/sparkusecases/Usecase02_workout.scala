@@ -85,8 +85,7 @@ object Usecase02_workout
          val destPath= new Path(historypath + "/" + file.getPath().getName.toString())
          fs.rename(file.getPath(),destPath)
        }
-    }
-    
+    } 
     
     
     
