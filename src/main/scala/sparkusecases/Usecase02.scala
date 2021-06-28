@@ -72,7 +72,15 @@ object Usecase02
       val filenames = files.map(x => x.getPath().toString())
       
       val df = spark.read.format("csv").load(filenames:_*).toDF("Custid","FName","LName","Age","Profession")
-      df.withColumn("filename", input_file_name).show()
+      val df1 = df.withColumn("filename", input_file_name)
+      
+      //write into mysql
+      df1.write.format("jdbc").option("url","jdbc:mysql://localhost/custdb")
+      .mode("append")
+      .option("user","root")
+      .option("password","Root123$")
+      .option("dbtable","tblcustomerbatch")
+      .option("driver","com.mysql.cj.jdbc.Driver").save()
     }
   } 
    

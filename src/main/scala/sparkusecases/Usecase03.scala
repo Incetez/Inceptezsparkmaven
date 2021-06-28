@@ -32,7 +32,8 @@ object Usecase03
     val edf1 = spark.sql("""select A.*,case when A.effectivedt = B.edate then null else B.edate end as enddate 
                             from emain A left outer join empmdate B on A.empid = B.empid""") 
     edf1.createTempView("empfinal")
-    val df = spark.sql("select A.empid,A.name,A.employer,A.effectivedt,A.city,case when A.enddate is null then B.effectivedt else A.enddate end as enddate from empfinal A left outer join echange B on A.empid = B.empid")
+    val df = spark.sql("""select A.empid,A.name,A.employer,A.effectivedt,A.city,case when A.enddate is null then B.effectivedt else A.enddate end as enddate 
+                        from empfinal A left outer join echange B on A.empid = B.empid""")
     val df1 = spark.sql("select *,null as endate from echange")
     val df2 = df.union(df1)
     //val jdf = empmain.join(empchange,empmain.col("empid") === empchange.col("empid"),"leftOuter")
