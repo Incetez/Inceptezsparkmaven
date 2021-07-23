@@ -20,7 +20,8 @@ object Usecase01
     .option("driver","com.mysql.cj.jdbc.Driver").load()
     
     //writ into hive table
-    df.write.mode("append").saveAsTable("tblorderdata1")
+    //df.write.mode("append").saveAsTable("tblorderdata1")
+    df.show()
   }
   
 }

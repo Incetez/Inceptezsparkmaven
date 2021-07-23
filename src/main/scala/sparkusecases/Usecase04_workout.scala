@@ -57,6 +57,8 @@ object Usecase04_workout
         val df = spark.read.json(rddjsondata.toDS())
         df.printSchema
         df.show()
+        
+        val df1 = df.select("base","clouds.all","cod","coord.lat","coord.lon","dt","id","main.feels_like","main.grnd_level")
             
         }
         else
